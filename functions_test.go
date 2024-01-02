@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-func TestIndexJobs(t *testing.T) {
+func TestTestPlatformResultsCISearchIndex(t *testing.T) {
 	tests := []struct {
 		name    string
 		e       GCSEvent
@@ -23,8 +23,8 @@ func TestIndexJobs(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			if err := IndexJobs(context.TODO(), tt.e); (err != nil) != tt.wantErr {
-				t.Errorf("IndexJobs() error = %v, wantErr %v", err, tt.wantErr)
+			if err := TestPlatformResultsCISearchIndex(context.TODO(), tt.e); (err != nil) != tt.wantErr {
+				t.Errorf("TestPlatformResultsCISearchIndex() error = %v, wantErr %v", err, tt.wantErr)
 			}
 		})
 	}

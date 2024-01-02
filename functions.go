@@ -54,7 +54,7 @@ type GCSEvent struct {
 	// ResourceState string `json:"resourceState"`
 }
 
-// IndexJobs creates a date sharded index of all jobs within
+// TestPlatformResultsCISearchIndex creates a date sharded index of all jobs within
 // a bucket. Jobs that have completed are linked from
 //
 //   gs://BUCKET/index/job-failures/RFC3339_DATE_OF_FAILURE/JOB_NAME/BUILD_NUMBER
@@ -66,7 +66,7 @@ type GCSEvent struct {
 //
 // Readers should not assume anything about the contents of the
 // object or that the link is in the same bucket.
-func IndexJobs(ctx context.Context, e GCSEvent) error {
+func TestPlatformResultsCISearchIndex(ctx context.Context, e GCSEvent) error {
 	// meta, err := metadata.FromContext(ctx)
 	// if err != nil {
 	// 	return fmt.Errorf("metadata.FromContext: %v", err)
